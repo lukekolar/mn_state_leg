@@ -1,0 +1,57 @@
+---
+title: "MN State Senate Twitter Analysis"
+author: "Luke Kolar"
+date: "9/18/2020"
+output: html_document
+---
+
+```{r}
+
+# load twitter library
+library(rtweet)
+
+library(ggplot2)
+library(dplyr)
+library(tidytext)
+
+```
+
+
+```{r}
+
+appname <- "MN State Legislature Analysis"
+
+key <- "PjNwrrwVXORT3T4N14rKrjQUi"
+secret <- "zoXRUIOQ3QGsW4OMzBkDnRcVuatAlROX32KaLoYsQison6sLwR"
+bearertoken <- "AAAAAAAAAAAAAAAAAAAAAFFTHwEAAAAAR2iPm13VvlbUPJ8rFTSO4ZXPN8g%3Dw0GU1WOIaXrQrYYYmgdgKkIJygBfyegPPLMr14Hk2xSXsBzEod"
+
+access_token <- "1246978112493101056-LYYBwBQ1QpNJeZ0NQwVgF4xwmvGGoz"
+access_secret <- "Zdz6E3EXXISBHEym3Hg7NGCf4LsDnMFCwRlFf8G9MwMdZ"
+
+twitter_token <- create_token(
+  app = appname,
+  consumer_key = key,
+  consumer_secret = secret,
+  access_token = access_token,
+  access_secret = access_secret)
+
+
+```
+
+```{r}
+
+rstats_tweets <- search_tweets(q = "#Rocks&Cows",
+                               n = 500)
+View(rstats_tweets)
+
+```
+
+
+
+
+
+
+
+
+
+
